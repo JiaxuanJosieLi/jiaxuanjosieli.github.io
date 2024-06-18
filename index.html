@@ -5,35 +5,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Josie Li - Graduate Student in Computer Science -- Georgia Tech</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        .project { margin-top: 20px; }
-        .tags { margin-top: 10px; }
-        .tag { display: inline-block; background-color: #333; padding: 5px 10px; border-radius: 5px; margin-right: 5px; }
+        body { font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; margin: 0; padding: 0; }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #121212;
+            padding: 40px 20px 20px 300px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .header h1, .header h2, .header p {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 180px 20px 20px;
+        }
+        .intro-section, .experiences, .project {
+            margin-bottom: 40px;
+        }
+        .intro-section {
+            display: flex;
+            align-items: flex-start;
+        }
+        .intro-text {
+            flex: 1;
+            margin-right: 20px;
+            font-weight: lighter;
+        }
+        .intro-photo {
+            flex: 0 0 195px;
+        }
+        .intro-photo img {
+            max-width: 195px;
+        }
+        .project { 
+            margin-top: 20px; 
+            cursor: pointer; 
+            padding: 10px; 
+            display: flex; 
+            align-items: center; 
+        }
+        .project img { 
+            max-width: 150px; 
+            margin-right: 20px; 
+        }
+        .project-content { 
+            flex: 1; 
+            font-weight: lighter;
+        }
+        .project:hover { 
+            background-color: #333; 
+        }
+        .tags { 
+            margin-top: 10px; 
+            display: flex; 
+            flex-wrap: wrap; 
+        }
+        .tag { 
+            display: inline-block; 
+            background-color: #333; 
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            margin-right: 5px; 
+            margin-bottom: 5px; 
+        }
+        .link-icon { 
+            text-decoration: none; 
+            color: inherit; 
+        }
+        .link-icon i {
+            margin-left: 5px;
+        }
+        .resume-link {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .experiences p {
+            margin: 10px 0;
+            font-weight: lighter;
+        }
+        .experience h3, .experience h5 {
+            font-weight: bold;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
     </style>
     <script>
         function goToMixboard() {
-            window.location.href = "http://130.207.85.80/";
+            window.open("http://130.207.85.80/", "_blank");
+        }
+        function goToVideo() {
+            window.open("https://youtu.be/a8xdSzs7YuY", "_blank");
         }
     </script>
 </head>
 <body>
-    <div class="container">
+    <div class="header">
         <h1>Josie Li</h1>
-        <h2>MSCS Student</h2>
-        <p>Designing software with good user experiences and coding with real passion.</p>
-        <a href="https://github.com/JiaxuanJosieLi/jiaxuanjosieli.github.io/blob/main/Resume_JiaxuanLi.pdf" target="_blank">View Full Resume</a>
-        
+        <h2>MSCS Student at Georgia Tech</h2>
+        <p>Developing software with good user experiences and Coding with real passion.</p>
+    </div>
+
+    <div class="container">
+        <div class="intro-section">
+            <div class="intro-text">
+                <p>
+                    Hi there! I'm Jiaxuan Li, go by Josie. I'm a a passionate Software Development Engineer with 4 years of study in Computer Science
+                    and adequate experiences in industry.
+                </p> 
+                <p>
+                    Over the years, I've had the pleasure of working on diverse projects ranging from dynamic web applications to scalable AI and HCI course projects. 
+                    What excites me most about software development is the endless possibilities for problem-solving and innovation. I thrive in environments where 
+                    I can continuously learn and apply new technologies to create efficient and user-friendly applications.
+                </p>
+                <p>
+                    Outside of coding, you'll find me exploring nature, cooking Chinese dishes and baking, hanging out with friends, or immersing in music. 
+                    Feel free to explore my portfolio to see some of the projects I've worked on. Let's connect and create something amazing together!
+                </p>
+            </div>
+            <div class="intro-photo">
+                <img src="images/myphoto.jpg" alt="Josie Li">
+            </div>
+        </div>
+
+        <div class="experiences">
+            
+            <div class="experience">
+                <h3>Goldman Sachs</h3>
+                <h5>Software Engineer Intern</h5>
+                <p>Implemented a new UI generation for Platform Solutions division that over 1000 agents utilize to provide customer services of Apple Card, High Yield Saving Account, and General Motor Card.</p>
+                <p>Built contract-based RESTful API with OpenAPI to add states for credit card application flow, including enabling agents to decline applications to protect the business from fraud; Mocked API calls with Postman and tracked in Splunk.</p>
+                <p>Developed a domain-based micro-frontend with React, which enabled agents to search customer profiles and perform service efficiently, significantly reducing the operational expenses of the company. Performed unit tests with Jest.</p>
+                <p>Created Jira tickets for the epic and followed CI/CD pipeline to work in multiple codebases with teammates.</p>
+                <div class="tags">
+                    <span class="tag">React</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">RESTful API</span>
+                    <span class="tag">CI/CD</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">Jest</span>
+                </div>
+            </div>
+
+            <div class="experience">
+                <h3><a href="https://www.iwhalecloud.com" class="link-icon" target="_blank">Whale Cloud Technology Co., Ltd &#8599;</a></h3>
+                <h5>Software Engineer Intern</h5>
+                <p>Utilized Android Studio and Java to create user interface for an application, which enabled over 10000 broadband installers to accept orders in mobile terminals and upload photos of Broadband CPE information on site.</p>
+                <p>Created user-centered features including allowing users to set network environment for upload mode. Transferred users’ input as documents to the server using RESTful API, facilitating company’s digital transformation.</p>
+                <p>Worked in CI/CD pipeline with other interns and developers and collaborated by using Git version control system.</p>
+                <div class="tags">
+                    <span class="tag">Android</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">RESTful API</span>
+                    <span class="tag">Git</span>
+                </div>
+            </div>
+
+            <a href="https://github.com/JiaxuanJosieLi/jiaxuanjosieli.github.io/blob/main/Resume_JiaxuanLi.pdf" target="_blank" class="resume-link">View My Full Resume</a>
+        </div>
+
         <div class="project" onclick="goToMixboard()">
-            <h3>Mixboard</h3>
-            <p>A Web APP that separates songs into chords, bass, vocals, and drum parts for users to mashup on a drag-and-drop interface. Start to create your own masterpieces!</p>
-            <div class="tags">
-                <span class="tag">React</span>
-                <span class="tag">Typescript</span>
-                <span class="tag">HTML Drag & Drop API</span>
-                <span class="tag">Chakra UI</span>
-                <span class="tag">Flask</span>
-                <span class="tag">Python</span>
+            <img src="images/mixboard.jpg" alt="Mixboard Image">
+            <div class="project-content">
+                <h3>Mixboard <a href="http://130.207.85.80/" class="link-icon" target="_blank">&#8599;</a></h3>
+                <p>A Web APP that separates songs into chords, bass, vocals, and drum parts for users to mashup on a drag-and-drop interface. Start to create your own masterpieces!</p>
+                <div class="tags">
+                    <span class="tag">React</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">HTML Drag & Drop API</span>
+                    <span class="tag">Chakra UI</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">Python</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project" onclick="goToVideo()">
+            <img src="images/Swifood.jpg" alt="Swifood UI Design Image">
+            <div class="project-content">
+                <h3>Swifood UI Design<a href="https://youtu.be/a8xdSzs7YuY" class="link-icon" target="_blank">&#8599;</a></h3>
+                <p>A Web APP for Georgia Tech Campus Ordering system. Check lines for every restaurant on campus and choose to order food online or join lines in-person!</p>
+                <div class="tags">
+                    <span class="tag">Figma</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
             </div>
         </div>
         
