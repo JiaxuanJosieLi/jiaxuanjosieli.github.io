@@ -11,6 +11,11 @@
         .tags { margin-top: 10px; }
         .tag { display: inline-block; background-color: #333; padding: 5px 10px; border-radius: 5px; margin-right: 5px; }
     </style>
+    <script>
+        function goToMixboard() {
+            window.location.href = "http://130.207.85.80/";
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -19,20 +24,18 @@
         <p>Designing software with good user experiences and coding with real passion.</p>
         <a href="https://github.com/JiaxuanJosieLi/jiaxuanjosieli.github.io/blob/main/Resume_JiaxuanLi.pdf" target="_blank">View Full Resume</a>
         
-        <a href="http://130.207.85.80/" target="_blank" class="project-link">
-            <div class="project">
-                <h3>Mixboard</h3>
-                <p>A Web APP that separates songs into chords, bass, vocals, and drum parts for users to mashup on a drag-and-drop interface. Start to create your own masterpieces!</p>
-                <div class="tags">
-                    <span class="tag">React</span>
-                    <span class="tag">Typescript</span>
-                    <span class="tag">HTML Drag & Drop API</span>
-                    <span class="tag">Chakra UI</span>
-                    <span class="tag">Flask</span>
-                    <span class="tag">Python</span>
-                </div>
+        <div class="project" onclick="goToMixboard()">
+            <h3>Mixboard</h3>
+            <p>A Web APP that separates songs into chords, bass, vocals, and drum parts for users to mashup on a drag-and-drop interface. Start to create your own masterpieces!</p>
+            <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">Typescript</span>
+                <span class="tag">HTML Drag & Drop API</span>
+                <span class="tag">Chakra UI</span>
+                <span class="tag">Flask</span>
+                <span class="tag">Python</span>
             </div>
-        </a>
+        </div>
         
         <div class="footer">
             <a href="https://linkedin.com/in/jiaxuan-josie-li" target="_blank">LinkedIn</a>
